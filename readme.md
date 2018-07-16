@@ -1,8 +1,8 @@
 ## Pokeking
 ## Setup the project
 - php artisan migrate
-- php artisan collect:pokemons false
-*(or true if you want to truncate the pokemons table while importing)*
+- php artisan db:seed
+(Collects all pokemons and pokemon profiles to database)
 
 
 
