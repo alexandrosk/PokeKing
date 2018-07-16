@@ -2,9 +2,9 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use GuzzleHttp\Client;
+use GuzzleHttp\Client as GuzzleClient;
 
-class PokemonProfilesSeeder extends Seeder
+class PokemonSeeder extends Seeder
 {
 
     /**
@@ -54,7 +54,7 @@ class PokemonProfilesSeeder extends Seeder
             if (!isset($result->name) || !isset($result->url)) {
                 continue;
             }
-            DB::table('pokemon_profiles')->insert([
+            DB::table('pokemons')->insert([
                 'name'      => $result->name,
                 'url'       => $result->url,
             ]);
