@@ -10,4 +10,11 @@ class Pokemon extends Model
 
     protected $fillable = ['url', 'name'];
 
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
 }
