@@ -13,4 +13,5 @@
 
 
 Route::get( '/', 'PokemonProfilesController@index' );
+Route::get( '/pokeking', 'PokemonProfilesController@declareKing' );
 

@@ -33,9 +33,29 @@
         <div class="links">
             {{ $pokemons->links() }}
         </div>
+        <div id="pokeking"></div>
         <div class="links" >
-            <a href="/pokeking" class="pokeking-btn">Find the pokeking</a>
+            <a href="/pokeking" id="declare-king" class="pokeking-btn">Find the pokeking</a>
         </div>
 
     </div>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+    </script>
+    <script>
+        jQuery(document).ready(function(){
+            jQuery('#declare-king').click(function(e){
+                e.preventDefault();
+                jQuery.ajax({
+                    url: "{{ url('/pokeking') }}",
+                    method: 'get',
+                    data: {},
+                    success: function(result){
+                        jQuery('#pokeking').html(result)
+                    }
+                });
+            });
+        });
+    </script>
 @endsection
